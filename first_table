@@ -1,0 +1,33 @@
+CREATE TABLE Authors (
+    author_id INT PRIMARY KEY,
+    author_name VARCHAR(100),
+    author_email VARCHAR(100)
+);
+CREATE TABLE Books (
+    book_id INT PRIMARY KEY,
+    book_title VARCHAR(255),
+    author_id INT,
+    FOREIGN KEY (author_id) REFERENCES Authors(author_id)
+);
+CREATE TABLE Borrowers (
+    borrower_id INT PRIMARY KEY,
+    borrower_name VARCHAR(100),
+    borrower_email VARCHAR(100)
+);
+INSERT INTO Authors (author_id, author_name, author_email)
+VALUES 
+    (1, 'parry', 'prabh@gmaIil.com'),
+    (2, 'ironman', 'freecode@gmail.com'),
+    (3, 'Harjashan', 'jashan@example.com');
+
+INSERT INTO Books (book_id, book_title, author_id)
+VALUES 
+    (101, 'Harry Potter and the Philosopher''s Stone', 1),
+    (102, 'The end', 2),
+    (103, 'To Kill a god', 3);
+INSERT INTO Borrowers (borrower_id, borrower_name, borrower_email)
+VALUES 
+   
+SELECT * FROM Authors;
+SELECT * FROM Books;
+SELECT * FROM Borrowers;
